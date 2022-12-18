@@ -1,8 +1,6 @@
 // BANK ACCOUNT
-
-//the object is responsible for the logic in this assignment 
 const account = {
-  accountName: "Sven",
+  accountName: "Sven Andersson",
   getAccountName: function () {
     alert(`Name of account holder: ${this.accountName}`);
     atm();
@@ -10,25 +8,39 @@ const account = {
 
   balance: 1000, 
   getBalance: function() {
-    alert(`You have ${this.balance} on your account`);
+    alert(`You have ${this.balance}$ on your account`);
     atm();
   },
 
-  deposit: function() {
-    account.balance += deposit;
-    atm();
+  deposit: function() {//parseFloat gör att man tar emot nummer istället för en string
+    let amount = parseFloat(
+      prompt("How much would you like to deposit?")
+      );
+      if (amount <= -0){
+        prompt("Write a higher number.")
+      } else { 
+        account.balance += amount;
+      }
+      this.getBalance();
   },
 
   withdrawal: function() {
-    account.balance -= withdrawal;
+    let amount = parseFloat(
+      prompt("How much do you want to withdraw?")
+      );      
+      if (amount <= -0){
+        prompt("Write a higher number.")
+      } else {
+        account.balance -= amount;
+      };
+      this.getBalance();
   }
-}
+};
 
-//this is responsible for the user interface:
 function atm() {
   let message = parseFloat(
-    //parseint message = behållaren av värdet 
-    prompt("What would you like to do today? 1.) See account name 2.) See balance 3.) Deposit money")
+    //parseFloat message = behållaren av värdet 
+    prompt("What would you like to do today? 1.) See account name 2.) See balance 3.) Deposit money 4.) Withdraw money")
     );
 
   switch (message) {
@@ -41,22 +53,14 @@ function atm() {
     case 3:
       account.deposit();
       break;
+    case 4: 
+      account.withdrawal();
+      break;
     default:
-      alert("Choose between...");
+      alert("Choose between 1.) See account name 2.) See balance 3.) Deposit money 4.) Withdraw money");
+      atm();
       break;
   }
 }
 
 atm();
-// REQUIREMENTS
-// Create an object called account that has the following properties:
-
-// - deposit, also a function
-// this function should be able to deposit money onto the balance of the account
-
-// - withdrawal, also a function
-// this function should be able do withdrawal money from the balance of the account
-
-
-//select a chocie 1. see balance 2. account
-//accountName 

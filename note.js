@@ -54,3 +54,22 @@ isNaN(variableName);
   // to show the right output based on the user input you can
   // either use a if/else statement or a switch.
   // Write a comment and motivate your choice
+
+  
+  /*withdrawal: function() {
+    account.balance -= withdrawal;
+  }*/ 
+
+  // BANK ACCOUNT
+
+// REQUIREMENTS
+// Create an object called account that has the following properties:
+
+// - deposit, also a function
+// this function should be able to deposit money onto the balance of the account
+
+// - withdrawal, also a function
+// this function should be able do withdrawal money from the balance of the account
+
+//select a chocie 1. see balance 2. account
+//accountName
